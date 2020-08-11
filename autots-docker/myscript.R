@@ -40,7 +40,7 @@ train <- function() {
     by = "Date"]
     # Forecast
     weekly_forecast = RemixAutoML::AutoTS(
-    data = top_store_weekly_sales,
+    data = top_store_weekly_sales %>% mutate(Date = ymd(Date)),
     TargetName = "Weekly_Sales",
     DateName = "Date",
     FCPeriods = 16,

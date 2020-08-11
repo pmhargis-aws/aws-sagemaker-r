@@ -52,7 +52,7 @@ RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y python3 python3-dev python3-pip python3-venv
 RUN pip3 install sagemaker==1.0.0
 
-COPY myscript.R /opt/ml/plumber.R
+COPY plumber.R /opt/ml/plumber.R
 COPY myscript.R /opt/ml/myscript.R
 
 ENTRYPOINT ["Rscript", "/opt/ml/myscript.R", "--no-save"]
